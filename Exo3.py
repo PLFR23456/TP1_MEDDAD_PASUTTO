@@ -4,11 +4,7 @@ from Exo1 import distance_simple
 import numpy as np
 
 class Robot:
-    @dispatch ()
-    def __init__ (self):
-        self.position = Position()
-    @dispatch (Position)
-    def __init__ (self,pos): #SURCHARGE
+    def __init__ (self,pos=Position()): #SURCHARGE
         self.position = pos
 
     def avancer_droite(self,delta):
