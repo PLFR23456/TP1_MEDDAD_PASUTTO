@@ -1,8 +1,9 @@
-from Exo2 import Position
+from Exo2 import Position, distance_simple
 from Exo3 import Robot
 from Exo4 import Cible
 from Exo5 import Parcours
 from Exo6 import Terrain
+import os
 
 def demonstration_complete():
     #1. Créer un terrain
@@ -25,6 +26,7 @@ def demonstration_complete():
     terrain.lancer_mission()
 
     #5. Afficher l’état final
+    os.system("cls")
     print("\nEtat final des robots :")
     terrain.afficher_etat()
 
