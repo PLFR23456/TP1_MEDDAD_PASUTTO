@@ -1,10 +1,13 @@
 from Exo2 import Position
 from Exo3 import Robot
 from Exo4 import Cible
+import time
 
 class Parcours:
     def __init__(self):
         self.list = []
+    def ajouter_cible(self,cible):
+        self.list.append(cible)
     def nombre_cibles(self):
         return len(self.list)
     def cible_suivante(self):
@@ -16,11 +19,9 @@ class Parcours:
             cible.afficher()
     def executer_parcours(self,robot):
         for cible in self.list:
-            robot.aller_vers()
-
-            if(cible.est_atteinte_par == False):
-
-
+            robot.aller_vers(cible.position)
+            while(cible.est_atteinte_par(robot) == False):
+                time.sleep(1)           # THEORIQUE car le déplacement est immédiat
 
 #########################      5.1         ################################            
 parcours = Parcours()
