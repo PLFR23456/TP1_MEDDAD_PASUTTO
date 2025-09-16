@@ -12,7 +12,7 @@ class Parcours:
         return len(self.list)
     def cible_suivante(self):
         for cible in self.list:
-            if(cible.est_atteinte_par == False):
+            if(cible.est_atteinte_par(robot) == False):
                 return cible #Pas besoin de BREAK  #1ère cible non-atteinte
     def afficher(self):
         for cible in self.list:
