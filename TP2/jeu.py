@@ -64,10 +64,15 @@ class Game:
 
 ##### MAIN #####
 def main():
-    jeu_1 = Game(nb_tours=5)
-    jeu_1.add_player("Toto")    
-    jeu_1.add_player("Titi")
-    jeu_1.setCheater("Titi")
+    jeu_1 = Game(int(input("Nombre de tours:")))
+    nb_joueurs = int(input("Nombre de joueurs:"))
+    for i in range(nb_joueurs):
+        joueur = str(input(f"Nom du joueur {i+1}:"))
+        jeu_1.add_player(joueur)
+        if(random.randrange(1,100) == 10):
+            jeu_1.setCheater(joueur)   
+    jeu_1.add_player("cheater")
+    jeu_1.setCheater("cheater")  
     jeu_1.launch()
     
 main()
