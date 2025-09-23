@@ -41,17 +41,27 @@ class Game:
 
         random.shuffle(self.deck)
         for tour in range(self.nb_tours):
-            print(f"--- Tour {tour+1} ---")
             for player in self.joueurs:
                 if len(self.deck) == 0:
                     print("No more cards in the deck!")
                     return
+                
+                #Tour 1 : Joueur 1 tire une Carte Chance.
+                #Effet : Ajoute 10 points.
+                #Score actuel de Joueur 1 : 10
                 drawn_card = self.deck.pop()
-                print(f"{player.nom} draws a {drawn_card.carte} card")
+                nom_carte = list(cartes.keys())[list(cartes.values()).index(drawn_card.carte)]
+                print(f"Tour {tour+1} : Joueur {player.nom} tire une Carte {nom_carte}")
                 player.jouerCarte(drawn_card)
-                print(f"{player.nom} now has a score of {player.score}")
-
+                if(drawn_card.point<0):
+                    print(f"Effet : Perd {drawn_card.point} points.")
+                else:
+                    print(f"Effet : Ajoute {drawn_card.point} points.")
+                print(f"Score actuel de {player.nom} : {player.score}")
         
+        for player in self.joueurs:
+            print(f"Score final de {player.nom} : {player.score}")
+
 ##### MAIN #####
 def main():
     jeu_1 = Game(nb_tours=5)

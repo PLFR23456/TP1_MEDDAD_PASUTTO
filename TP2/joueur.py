@@ -6,8 +6,8 @@ class Joueur:
         self.last_score = 0
     def jouerCarte(self,carte):
         if(carte.carte==cartes["Bonus"]):
-            self.score *= 2
-            return
+            #self.score *= 2
+            carte.point = self.score
         carte.appliquer(self) 
 
 
