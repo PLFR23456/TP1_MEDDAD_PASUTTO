@@ -13,8 +13,9 @@ class Joueur:
 
 class Tricheur(Joueur):
     def jouerCarte(self, carte):
-        if(carte.carte==cartes["Malus"]):
-            self.score += 5
+        if carte.carte == cartes["Malus"]:
+            print(f"{self.nom} triche : il ignore le malus !")
+            return #coupe l'effet de la carte
         super().jouerCarte(carte)
         
 

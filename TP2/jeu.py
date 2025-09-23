@@ -54,7 +54,7 @@ class Game:
                 print(f"Tour {tour+1} : Joueur {player.nom} tire une Carte {nom_carte}")
                 player.jouerCarte(drawn_card)
                 if(drawn_card.point<0):
-                    print(f"Effet : Perd {drawn_card.point} points.")
+                    print(f"Effet : Perd {abs(drawn_card.point)} points.")
                 else:
                     print(f"Effet : Ajoute {drawn_card.point} points.")
                 print(f"Score actuel de {player.nom} : {player.score}")
