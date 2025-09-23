@@ -25,6 +25,7 @@ class Carte_normale(Carte):
 class Carte_bonus(Carte):
     def __init__(self):
         self.carte = cartes['Bonus']
+        self.point = 0
 
 class Carte_malus(Carte):
     def __init__(self):
