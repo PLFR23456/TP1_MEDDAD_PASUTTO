@@ -9,8 +9,6 @@ class Carte(ABC):
         self.carte = cartes
         self.point = None
 
-
-    @abstractmethod
     def appliquer(self, joueur):
         joueur.score += self.point
 
@@ -21,7 +19,7 @@ class Carte_normale(Carte):
     def __init__(self):
         self.carte = cartes['Normale']
         self.point = random.randrange(1,10)
-
+    
 class Carte_bonus(Carte):
     def __init__(self):
         self.carte = cartes['Bonus']
