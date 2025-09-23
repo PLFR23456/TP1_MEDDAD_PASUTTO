@@ -1,4 +1,4 @@
-from Exo2 import Position, distance_simple
+from Exo2 import Position
 from Exo3 import Robot
 from Exo4 import Cible
 from Exo5 import Parcours
